@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Base.Web.Middleware.Exceptions;
 
 namespace Base.Web
 {
@@ -17,6 +18,7 @@ namespace Base.Web
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, Microsoft.Extensions.Logging.ILoggerFactory loggerFactory)
         {
+            app.UseUnhandledExceptionCatching();
             app.UseMvc();
             loggerFactory.AddConsole();
         }

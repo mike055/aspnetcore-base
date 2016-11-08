@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
+using System;
 
 namespace Base.Web.Controllers
 {
@@ -13,6 +14,13 @@ namespace Base.Web.Controllers
             return Ok(new {
                 message = "This API is alive"
             });
+        }
+
+        [HttpGet("error")]
+        public async Task<IActionResult> GetErrorAsync()
+        {
+            throw new Exception("Test Middleware and Logging is working");
+            return Ok();
         }
     }
 }
