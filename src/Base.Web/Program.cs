@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
 namespace Base.Web
@@ -11,6 +12,7 @@ namespace Base.Web
                 .UseKestrel(o=> {
                     o.AddServerHeader = false;
                 })
+                .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseStartup<Startup>()
                 .Build();
 
