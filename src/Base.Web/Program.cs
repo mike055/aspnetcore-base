@@ -8,7 +8,9 @@ namespace Base.Web
         public static void Main(string[] args)
         {
              var host = new WebHostBuilder()
-                .UseKestrel()
+                .UseKestrel(o=> {
+                    o.AddServerHeader = false;
+                })
                 .UseStartup<Startup>()
                 .Build();
 
