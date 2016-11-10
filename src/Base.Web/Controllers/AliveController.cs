@@ -12,7 +12,7 @@ namespace Base.Web.Controllers
         public async Task<IActionResult> GetAsync()
         {
             return Ok(new {
-                message = "This API is alive"
+                message = "This API is alive and watching"
             });
         }
 
